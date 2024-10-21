@@ -1,3 +1,13 @@
+'use client'
+
 export default function Home() {
-  return <div>Hello JStack</div>;
+  const { appName } = window.navigator;
+
+  return (
+    <div>
+      Hello JStack
+      
+      {appName}
+    </div>
+  );
 }
