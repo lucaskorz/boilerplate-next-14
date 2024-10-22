@@ -1,13 +1,15 @@
-'use client'
+import Button from "./components/Button";
 
-export default function Home() {
-  const { appName } = window.navigator;
+export default async function Home() {
+  const result = await fetch('https://api.fsis.info/')
+    .then(response => response.text())
 
   return (
-    <div>
-      Hello JStack
-      
-      {appName}
+    <div>      
+      {result}
+
+      <br />
+      <Button nameButton={result} />
     </div>
   );
 }
